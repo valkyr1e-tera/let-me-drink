@@ -1,0 +1,14 @@
+{
+	"files": {
+		"index.js": "b528124a6f3f551e872f7ce65493f1541ff404786e4dd0d74bccef4b0584dce7",
+		"module.json": "5212003f89d6278b5fa923d4c74c7684c17e63764f605540933617ac3ca7dce3",
+		"preset.js": {
+			"overwrite": false,
+			"hash": "87a62aa54de0693f0f8f9e8cba7dce99b7a97970c51dead635bf849a98b60c95"
+		}
+	},
+	"defs": {
+		"C_START_SKILL": [6,7],
+		"C_USE_ITEM": 3
+	}
+}
