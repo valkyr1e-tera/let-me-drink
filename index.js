@@ -10,8 +10,8 @@ module.exports = function LetMeDrink(mod) {
     mod.command.message(`${enabled ? 'en' : 'dis'}abled`)
   })
 
-  mod.hook('C_START_SKILL', (mod.base.majorPatchVersion >= 74) ? 7 : 6, event => {
-    if (!enabled || cooldown)
+  mod.hook('C_START_SKILL', (mod.majorPatchVersion >= 74) ? 7 : 6, event => {
+    if (!enabled || cooldown || mod.game.me.zone === 9713)
       return
 
     const jobpreset = preset[jobId()] || {}
