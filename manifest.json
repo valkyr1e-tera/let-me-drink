@@ -1,11 +1,8 @@
 {
 	"files": {
-		"index.js": "3e8b28a3199c7f6ad4ddeb8cabc60a1ad97299a0358a431934370a40ca0f5c28",
-		"module.json": "5212003f89d6278b5fa923d4c74c7684c17e63764f605540933617ac3ca7dce3",
-		"preset.js": {
-			"overwrite": false,
-			"hash": "87a62aa54de0693f0f8f9e8cba7dce99b7a97970c51dead635bf849a98b60c95"
-		}
+		"index.js": "09ab95e8dd2d02c3265d482f4cd59e3cacf4e2a9a523f371392d457973046593",
+		"module.json": "d0595edf07731d796d1a972af8e3950a1eb16c4cf1eea06c7e28af266016628f",
+		"settings_migrator.js": "7dfa85c33e777fa67b28b8f3bb8628be9d9d1f68be33759460caed8e2c1af6e5"
 	},
 	"defs": {
 		"C_START_SKILL": [6,7],

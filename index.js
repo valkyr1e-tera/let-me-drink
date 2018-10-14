@@ -1,13 +1,12 @@
 module.exports = function LetMeDrink(mod) {
-  const preset = require('./preset')
   const jobId = () => (mod.game.me.templateId - 10101) % 100
   const skillGroup = (x) => Math.floor(x / 10000)
   let enabled = true
   let cooldown = false
 
   mod.command.add(['letmedrink', 'lmd'], () => {
-    enabled = !enabled
-    mod.command.message(`${enabled ? 'en' : 'dis'}abled`)
+    mod.settings.enabled = !mod.settings.enabled
+    mod.command.message((mod.settings.enabled ? 'en' : 'dis') + 'abled')
   })
 
   function drinkBeer() {
@@ -20,7 +19,7 @@ module.exports = function LetMeDrink(mod) {
   }
 
   mod.hook('C_USE_ITEM', 3, event => {
-    if (!enabled || cooldown || mod.game.me.zone === 9713)
+    if (!enabled || cooldown || mod.settings.excludeZones.includes(mod.game.me.zone))
       return
 
     if (mod.game.me.is(event.gameId) && event.id === 51028)
@@ -28,11 +27,10 @@ module.exports = function LetMeDrink(mod) {
   })
 
   mod.hook('C_START_SKILL', (mod.majorPatchVersion >= 74) ? 7 : 6, event => {
-    if (!enabled || cooldown || mod.game.me.zone === 9713)
+    if (!enabled || cooldown || mod.settings.excludeZones.includes(mod.game.me.zone))
       return
 
-    const jobpreset = preset[jobId()] || {}
-    if (jobpreset[skillGroup(event.skill.id)])
+    if ((mod.settings.presets[jobId()] || {})[skillGroup(event.skill.id)])
       drinkBeer()
   })
 }
