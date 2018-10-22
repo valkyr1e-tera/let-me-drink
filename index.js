@@ -25,7 +25,7 @@ module.exports = function LetMeDrink(mod) {
       drinkBeer()
   })
 
-  mod.hook('C_START_SKILL', (mod.majorPatchVersion >= 74) ? 7 : 6, event => {
+  mod.hook('C_START_SKILL', 7, event => {
     if (!mod.settings.enabled || cooldown || mod.settings.excludeZones.includes(mod.game.me.zone))
       return
 

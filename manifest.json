@@ -1,11 +1,11 @@
 {
 	"files": {
-		"index.js": "17f78b258c14ebe32b46d94a4e56ba47a88a22b1dff6cf514bd5508438914fb1",
+		"index.js": "4f101c6e3e03681e7687dfbcbc9a1c51e0af236ab89e121352fc08420d3b1e2d",
 		"module.json": "d0595edf07731d796d1a972af8e3950a1eb16c4cf1eea06c7e28af266016628f",
 		"settings_migrator.js": "7dfa85c33e777fa67b28b8f3bb8628be9d9d1f68be33759460caed8e2c1af6e5"
 	},
 	"defs": {
-		"C_START_SKILL": [6,7],
+		"C_START_SKILL": 7,
 		"C_USE_ITEM": 3
 	}
 }
