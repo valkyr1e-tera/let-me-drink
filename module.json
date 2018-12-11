@@ -1,7 +1,10 @@
 {
 	"disableAutoUpdate": false,
+	"name": "let-me-drink",
+	"author": "valkyr1e",
+	"description": "Auto-drink Lein's Dark Root Beer",
+	"version": "1.0",
 	"options": {
-		"niceName": "let-me-drink",
 		"settingsVersion": 1,
 		"settingsFile": "config.json",
 		"settingsMigrator": "settings_migrator.js"
