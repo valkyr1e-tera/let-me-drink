@@ -9,6 +9,9 @@ module.exports = function LetMeDrink(mod) {
   })
 
   function drinkBeer() {
+    if (!mod.settings.enabled || cooldown || mod.settings.excludeZones.includes(mod.game.me.zone))
+      return
+
     setTimeout(() => { cooldown = false }, 60000)
     mod.toServer('C_USE_ITEM', 3, {
       gameId: mod.game.me.gameId,
@@ -17,18 +20,7 @@ module.exports = function LetMeDrink(mod) {
     cooldown = true
   }
 
-  mod.hook('C_USE_ITEM', 3, event => {
-    if (!mod.settings.enabled || cooldown || mod.settings.excludeZones.includes(mod.game.me.zone))
-      return
-
-    if (mod.game.me.is(event.gameId) && event.id === 51028)
-      drinkBeer()
-  })
-
   mod.hook('C_START_SKILL', 7, event => {
-    if (!mod.settings.enabled || cooldown || mod.settings.excludeZones.includes(mod.game.me.zone))
-      return
-
     if ((mod.settings.presets[jobId()] || {})[skillGroup(event.skill.id)])
       drinkBeer()
   })

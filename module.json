@@ -3,7 +3,7 @@
 	"name": "let-me-drink",
 	"author": "valkyr1e",
 	"description": "Auto-drink Lein's Dark Root Beer",
-	"version": "1.0",
+	"version": "1.1",
 	"options": {
 		"settingsVersion": 1,
 		"settingsFile": "config.json",
